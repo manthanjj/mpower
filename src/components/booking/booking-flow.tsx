@@ -54,7 +54,6 @@ export function BookingFlow({ initialServiceId }: BookingFlowProps) {
     setIntakeData(data);
     if (!selectedSlot) return;
 
-    setIsLocking(true);
     setLockError(null);
 
     try {
@@ -78,8 +77,6 @@ export function BookingFlow({ initialServiceId }: BookingFlowProps) {
     } catch {
       setLockTimeRemaining(600);
       setStep(4);
-    } finally {
-      setIsLocking(false);
     }
   };
 
